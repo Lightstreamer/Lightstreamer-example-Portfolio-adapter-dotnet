@@ -39,7 +39,7 @@ namespace Lightstreamer.Adapters.PortfolioDemo.Metadata
     /// in order to submit buy/sell orders to the (simulated) portfolio feed
     /// used by the Portfolio Data Adapter.
     /// </summary>
-    class PortfolioMetadataAdapter : LiteralBasedProvider
+    public class PortfolioMetadataAdapter : LiteralBasedProvider
     {
         /// <summary>
         /// Private logger; we lean on some logging configuration for log4net
