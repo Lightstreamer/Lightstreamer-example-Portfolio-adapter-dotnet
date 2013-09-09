@@ -16,10 +16,10 @@ Check out the sources for further explanations.
 # Build #
 
 If you want to skip the build process of this Adapter please note that in the [deploy release](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-dotnet/releases) of this project you can find the "deploy.zip" file that contains a ready-made deployment resource for the Lightstreamer server.<br>
-Otherwise to recompile the provided sources, you just need to create a project for a library target, then include the sources (src/src_adapters and src/src_metadata_adapter folders) and include references to the Lightstreamer .NET Adapter Server library binaries and Log4net library binaries (see DOCS-SDKs/sdk_adapter_dotnet/lib/ folder of your Lighstreamer home).<br>
+Otherwise to recompile the provided sources, you just need to create a project for a library target, name it "DotNetPortfolioDemo_N2", then include the sources ("src/src_adapters") and include references to the Lightstreamer .NET Adapter Server library binaries and Log4net library binaries (see DOCS-SDKs/sdk_adapter_dotnet/lib/ folder of your Lighstreamer home).<br>
 
 ## Build the Stand-alone launcher ##
-To recompile the provided source, you just need to create a project for a console application target, then include the source (StandaloneAdaptersLauncher.cs) and include references to the Lightstreamer .NET Adapter Server library binaries (see above), the Log4net library binaries (see
+To recompile the provided source, you just need to create a project for a console application target, name it "DotNetPortfolioDemoLauncher_N2", then include the source (StandaloneAdaptersLauncher.cs) and include references to the Lightstreamer .NET Adapter Server library binaries (see above), the Log4net library binaries (see
 above) and .NET Portfolio Demo Data Adapter binaries you have got from the above source code. Make sure that the entry point of the executable is the ServerMain class.
 
 # Deploy #
