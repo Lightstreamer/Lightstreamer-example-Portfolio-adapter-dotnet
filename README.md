@@ -10,8 +10,11 @@ The application is divided into 5 main classes.
 * <b>PortfolioFeed.cs</b>: used to receive data from the simulated portfolio feed in an asynchronous way.
 * <b>NotificationQueue.cs</b>: used to provide an executor of tasks in a single dedicated thread.<br>
 * <b>StandaloneAdaptersLauncher.cs</b>: this is a stand-alone executable that launches both the Data Adapter and the Metadata Adapter for the .NET Portfolio Demo example. It redirects sockets connections from Lightstreamer to the .NET Servers implemented in the DLL and does not rely on the .NET Server wrapper provided.<br>
+* <b>Log4NetLogging.cs</b>: used by the stand-alone executable to forward the log produced by the SDK library to the application logging system, based on log4net.<br>
 
 Check out the sources for further explanations.
+
+NOTE: At this stage, the demo is based on a SDK version still to be released. Refer to the "for lightstreamer 5.1.1" release for a demo version suitable for building and deploying.
 
 # Build #
 
