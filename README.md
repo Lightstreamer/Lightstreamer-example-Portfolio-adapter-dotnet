@@ -3,27 +3,27 @@
 This project contains the source code and all the resources needed to install a .NET version of the Portfolio Data and Metadata Adapters.
 
 ## Dig the code ##
-The application is divided into 5 main classes.
+The application is divided into 7 main classes.
 
 * <b>PortfolioDataAdapter.cs</b>: this is a C#/.NET porting of the [Portfolio Demo Data Adapter](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-java). It inherits from the <i>IDataProvider</i> interface and calls back Lightstreamer through the IItemEventListener interface. Use it as a starting point to implement your custom data adapter in case of <b>COMMAND</b> mode subscription.<br>
-* <b>LiteralBasedProvider.cs</b>: this is a C#/.NET porting of the [Portfolio Demo Metadata adapter](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-java). It inherits from the <b>LiteralBasedProvider</b>, which is enough for all demo clients. In addition, it implements the NotifyUserMessage method, in order to handle <b>sendMessage</b> requests from the Portfolio Demo client. This allows the Portfolio Demo client to use <b>sendMessage</b> in order to submit buy/sell orders to the (simulated) portfolio feed used by the Portfolio Data Adapter.<br>
+* <b>PortfolioBasedProvider.cs</b>: this is a C#/.NET porting of the [Portfolio Demo Metadata adapter](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-java). It inherits from the <b>LiteralBasedProvider</b>, which is enough for all demo clients. In addition, it implements the NotifyUserMessage method, in order to handle <b>sendMessage</b> requests from the Portfolio Demo client. This allows the Portfolio Demo client to use <b>sendMessage</b> in order to submit buy/sell orders to the (simulated) portfolio feed used by the Portfolio Data Adapter.<br>
+* <b>LiteralBasedProvider.cs</b>: this is a C#/.NET implementation of the [LiteralBasedProvider Metadata Adapter](https://github.com/Weswit/Lightstreamer-example-ReusableMetadata-adapter-java). It inherits from the IMetadataProvider interface. It can be used as a starting point to implement your custom metadata adapter.<br>
 * <b>PortfolioFeed.cs</b>: used to receive data from the simulated portfolio feed in an asynchronous way.
 * <b>NotificationQueue.cs</b>: used to provide an executor of tasks in a single dedicated thread.<br>
-* <b>StandaloneAdaptersLauncher.cs</b>: this is a stand-alone executable that launches both the Data Adapter and the Metadata Adapter for the .NET Portfolio Demo example. It redirects sockets connections from Lightstreamer to the .NET Servers implemented in the DLL and does not rely on the .NET Server wrapper provided.<br>
-* <b>Log4NetLogging.cs</b>: used by the stand-alone executable to forward the log produced by the SDK library to the application logging system, based on log4net.<br>
+* <b>StandaloneAdaptersLauncher.cs</b>: this is a stand-alone executable that launches both the Data Adapter and the Metadata Adapter for the .NET Portfolio Demo example. It redirects sockets connections from Lightstreamer to the .NET Servers implemented in the LS .NET SDK library and does not rely on the .NET Server wrapper provided.<br>
+* <b>Log4NetLogging.cs</b>: used by the stand-alone executable to forward the log produced by the LS .NET SDK library to the application logging system, based on log4net.<br>
 
-Check out the sources for further explanations.
+Check out the sources for further explanations.<br>
 
-<b>NOTE: At this stage, the demo is based on a SDK version still to be released. Refer to the "for_Lightstreamer_5.1.1" tag for a demo version suitable for building and deploying.</b>
+<b>NOTE: At this stage, the demo is based on a version of LS .NET SDK that is still to be released. Skip the notes below and refer to the "for_Lightstreamer_5.1.1" tag for a demo version suitable for building and deploying.</b>
 
 # Build #
 
 If you want to skip the build process of this Adapter please note that in the [deploy release](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-dotnet/releases) of this project you can find the "deploy.zip" file that contains a ready-made deployment resource for the Lightstreamer server.<br>
-Otherwise to recompile the provided sources, you just need to create a project for a library target, name it "DotNetPortfolioDemo_N2", then include the sources ("src/src_adapters") and include references to the Lightstreamer .NET Adapter Server library binaries and Log4net library binaries (see DOCS-SDKs/sdk_adapter_dotnet/lib/ folder of your Lighstreamer home).<br>
+Otherwise to recompile the provided sources, you just need to create a project for a library target, name it "DotNetPortfolioDemo_N2", then include the sources ("src/src_adapters") and include references to the Lightstreamer .NET Adapter Server library binaries (see DOCS-SDKs/sdk_adapter_dotnet/lib/ folder of your Lighstreamer home) and suitable Log4net library binaries.<br>
 
 ## Build the Stand-alone launcher ##
-To recompile the provided source, you just need to create a project for a console application target, name it "DotNetPortfolioDemoLauncher_N2", then include the source (StandaloneAdaptersLauncher.cs) and include references to the Lightstreamer .NET Adapter Server library binaries (see above), the Log4net library binaries (see
-above) and .NET Portfolio Demo Data Adapter binaries you have got from the above source code. Make sure that the entry point of the executable is the ServerMain class.
+To recompile the provided source, you just need to create a project for a console application target, name it "DotNetPortfolioDemoLauncher_N2", then include the source (StandaloneAdaptersLauncher.cs) and include references to the Lightstreamer .NET Adapter Server library binaries (see above), the Log4net library binaries (see above) and .NET Portfolio Demo Data Adapter binaries you have got from the above source code. Make sure that the entry point of the executable is the ServerMain class.
 
 # Deploy #
 
