@@ -55,6 +55,8 @@ namespace Lightstreamer.Adapters.PortfolioDemo
 
             _log.Info("Lightstreamer PortfolioDemo .NET Adapter Custom Server starting...");
 
+            Server.SetLoggerProvider(new Log4NetLoggerProviderWrapper());
+
             IDictionary parameters = new Hashtable();
             string host = null;
             int rrPortMD = -1;
