@@ -1,4 +1,4 @@
-# Lightstreamer - Portfolio Demo .NET Adapter #
+# Lightstreamer - Portfolio Demo - .NET Adapter #
 
 This project contains the source code and all the resources needed to install a .NET version of the Portfolio Data and Metadata Adapters.
 
