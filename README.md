@@ -1,13 +1,13 @@
-# Lightstreamer Portfolio Demo Adapter for .NET #
+# Lightstreamer - Portfolio Demo .NET Adapter #
 
 This project contains the source code and all the resources needed to install a .NET version of the Portfolio Data and Metadata Adapters.
 
 ## Dig the code ##
 The application is divided into 7 main classes.
 
-* <b>PortfolioDataAdapter.cs</b>: this is a C#/.NET porting of the [Portfolio Demo Data Adapter](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-java). It inherits from the <i>IDataProvider</i> interface and calls back Lightstreamer through the IItemEventListener interface. Use it as a starting point to implement your custom data adapter in case of <b>COMMAND</b> mode subscription.<br>
-* <b>PortfolioBasedProvider.cs</b>: this is a C#/.NET porting of the [Portfolio Demo Metadata adapter](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-java). It inherits from the <b>LiteralBasedProvider</b>, which is enough for all demo clients. In addition, it implements the NotifyUserMessage method, in order to handle <b>sendMessage</b> requests from the Portfolio Demo client. This allows the Portfolio Demo client to use <b>sendMessage</b> in order to submit buy/sell orders to the (simulated) portfolio feed used by the Portfolio Data Adapter.<br>
-* <b>LiteralBasedProvider.cs</b>: this is a C#/.NET implementation of the [LiteralBasedProvider Metadata Adapter](https://github.com/Weswit/Lightstreamer-example-ReusableMetadata-adapter-java). It inherits from the IMetadataProvider interface. It can be used as a starting point to implement your custom metadata adapter.<br>
+* <b>PortfolioDataAdapter.cs</b>: this is a C#/.NET porting of the [Lightstreamer - Portfolio Demo - Java SE Adapter](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-java). It inherits from the <i>IDataProvider</i> interface and calls back Lightstreamer through the IItemEventListener interface. Use it as a starting point to implement your custom data adapter in case of <b>COMMAND</b> mode subscription.<br>
+* <b>PortfolioBasedProvider.cs</b>: this is a C#/.NET porting of the Metadata Adapter in [Lightstreamer - Portfolio Demo - Java SE Adapter](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-java). It inherits from the <b>LiteralBasedProvider</b>, which is enough for all demo clients. In addition, it implements the NotifyUserMessage method, in order to handle <b>sendMessage</b> requests from the Portfolio Demo client. This allows the Portfolio Demo client to use <b>sendMessage</b> in order to submit buy/sell orders to the (simulated) portfolio feed used by the Portfolio Data Adapter.<br>
+* <b>LiteralBasedProvider.cs</b>: this is a C#/.NET implementation of the `LiteralBasedProvider` Metadata Adapter in [Lightstreamer - Reusable Metadata Adapters - Java SE Adapter](https://github.com/Weswit/Lightstreamer-example-ReusableMetadata-adapter-java). It inherits from the IMetadataProvider interface. It can be used as a starting point to implement your custom metadata adapter.<br>
 * <b>PortfolioFeed.cs</b>: used to receive data from the simulated portfolio feed in an asynchronous way.
 * <b>NotificationQueue.cs</b>: used to provide an executor of tasks in a single dedicated thread.<br>
 * <b>StandaloneAdaptersLauncher.cs</b>: this is a stand-alone executable that launches both the Data Adapter and the Metadata Adapter for the .NET Portfolio Demo example. It redirects sockets connections from Lightstreamer to the .NET Servers implemented in the LS .NET SDK library and does not rely on the .NET Server wrapper provided.<br>
@@ -32,7 +32,7 @@ To recompile the provided source, you just need to create a project for a consol
 To test the .NET Adapter follow this simple process below.
 The instructions provided refer to the "Deployment" directory you can find in the "deploy.zip" file of [latest release](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-dotnet/releases).
 
-1. Make sure you have a working installation of [Lightstreamer Portfolio Demo](https://github.com/Weswit/Lightstreamer-example-Portfolio-client-javascript).
+1. Make sure you have a working installation of [Lightstreamer - Portfolio Demo - HTML Client](https://github.com/Weswit/Lightstreamer-example-Portfolio-client-javascript).
 2. Make sure that Lightstreamer Server is not running.
 3. Plug the new Adapter Set into the Server. Just copy the "DotNetPortfolio" directory and all of its files to the "adapters" subdirectory in your Lightstreamer Server installation.<br>
 4. Launch the Remote .NET Adapter Server. The .NET Server resources can be found under Deployment_DotNet_Server(custom). Run the DotNetCustomServer.bat script under the "Deployment_DotNet_Server(custom)" Directory. The script runs the DotNetPortfolioDemoLauncher_N2.exe Custom Launcher, which hosts both the Remote Data Adapter and the Remote Metadata Adapter for the .NET Portfolio Demo.
@@ -75,13 +75,13 @@ On the other hand, two different examples of manual launch of the remote process
 # See Also #
 
 ## Clients using this Adapter ##
-* [Lightstreamer Portfolio Demo Client for JavaScript](https://github.com/Weswit/Lightstreamer-example-Portfolio-client-javascript)
-* [Lightstreamer Portfolio Demo Client for Adobe Flex SDK](https://github.com/Weswit/Lightstreamer-example-Portfolio-client-flex)
-* [Lightstreamer Portfolio Demo Client for Dojo](https://github.com/Weswit/Lightstreamer-example-Portfolio-client-dojo)
+* [Lightstreamer - Portfolio Demo - HTML Client](https://github.com/Weswit/Lightstreamer-example-Portfolio-client-javascript)
+* [Lightstreamer - Portfolio Demo - Flex Client](https://github.com/Weswit/Lightstreamer-example-Portfolio-client-flex)
+* [Lightstreamer - Portfolio Demo - Dojo Toolkit Client](https://github.com/Weswit/Lightstreamer-example-Portfolio-client-dojo)
 
 ## Related projects ##
-* [Lightstreamer Portfolio Demo Adapter](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-java)
-* [Lightstreamer StockList Demo Adapter for .NET](https://github.com/Weswit/Lightstreamer-example-StockList-adapter-dotnet)
+* [Lightstreamer - Portfolio Demo - Java SE Adapter](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-java)
+* [Lightstreamer - StockList Demo - .NET Adapter](https://github.com/Weswit/Lightstreamer-example-StockList-adapter-dotnet)
 
 # Lightstreamer Compatibility Notes #
 
