@@ -32,7 +32,7 @@ To recompile the provided source, you just need to create a project for a consol
 To test the .NET Adapter follow this simple process below.
 The instructions provided refer to the "Deployment" directory you can find in the "deploy.zip" file of [latest release](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-dotnet/releases).
 
-1. Make sure you have a working installation of [Lightstreamer - Portfolio Demo - HTML Client](https://github.com/Weswit/Lightstreamer-example-Portfolio-client-javascript).
+1. Make sure you have a working installation of [Lightstreamer - Portfolio Demos - HTML Clients](https://github.com/Weswit/Lightstreamer-example-Portfolio-client-javascript).
 2. Make sure that Lightstreamer Server is not running.
 3. Plug the new Adapter Set into the Server. Just copy the "DotNetPortfolio" directory and all of its files to the "adapters" subdirectory in your Lightstreamer Server installation.<br>
 4. Launch the Remote .NET Adapter Server. The .NET Server resources can be found under Deployment_DotNet_Server(custom). Run the DotNetCustomServer.bat script under the "Deployment_DotNet_Server(custom)" Directory. The script runs the DotNetPortfolioDemoLauncher_N2.exe Custom Launcher, which hosts both the Remote Data Adapter and the Remote Metadata Adapter for the .NET Portfolio Demo.
@@ -75,7 +75,7 @@ On the other hand, two different examples of manual launch of the remote process
 # See Also #
 
 ## Clients using this Adapter ##
-* [Lightstreamer - Portfolio Demo - HTML Client](https://github.com/Weswit/Lightstreamer-example-Portfolio-client-javascript)
+* [Lightstreamer - Portfolio Demos - HTML Clients](https://github.com/Weswit/Lightstreamer-example-Portfolio-client-javascript)
 * [Lightstreamer - Portfolio Demo - Flex Client](https://github.com/Weswit/Lightstreamer-example-Portfolio-client-flex)
 * [Lightstreamer - Portfolio Demo - Dojo Toolkit Client](https://github.com/Weswit/Lightstreamer-example-Portfolio-client-dojo)
 
