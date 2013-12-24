@@ -1,5 +1,5 @@
 # Lightstreamer - Portfolio Demo - .NET Adapter #
-<!-- START DESCRIPTION Portfolio Demo -->
+<!-- START DESCRIPTION lightstreamer-example-portfolio-adapter-dotnet -->
 
 This project contains the source code and all the resources needed to install a .NET version of the Portfolio Data and Metadata Adapters.
 
@@ -17,7 +17,7 @@ The application is divided into 7 main classes.
 Check out the sources for further explanations.<br>
 
 <b>NOTE: At this stage, the demo is based on a version of LS .NET SDK that is still to be released. Skip the notes below and refer to the "for_Lightstreamer_5.1.1" tag for a demo version suitable for building and deploying.</b>
-<!-- END DESCRIPTION Portfolio Demo -->
+<!-- END DESCRIPTION lightstreamer-example-portfolio-adapter-dotnet -->
 
 
 # Build #
