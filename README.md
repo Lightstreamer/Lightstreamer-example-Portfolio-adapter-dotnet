@@ -1,4 +1,5 @@
 # Lightstreamer - Portfolio Demo - .NET Adapter #
+<!-- START DESCRIPTION xxxxx -->
 
 This project contains the source code and all the resources needed to install a .NET version of the Portfolio Data and Metadata Adapters.
 
@@ -16,6 +17,8 @@ The application is divided into 7 main classes.
 Check out the sources for further explanations.<br>
 
 <b>NOTE: At this stage, the demo is based on a version of LS .NET SDK that is still to be released. Skip the notes below and refer to the "for_Lightstreamer_5.1.1" tag for a demo version suitable for building and deploying.</b>
+<!-- END DESCRIPTION xxxxx -->
+
 
 # Build #
 
@@ -75,9 +78,12 @@ On the other hand, two different examples of manual launch of the remote process
 # See Also #
 
 ## Clients using this Adapter ##
+<!-- START RELATED_ENTRIES -->
 * [Lightstreamer - Portfolio Demos - HTML Clients](https://github.com/Weswit/Lightstreamer-example-Portfolio-client-javascript)
 * [Lightstreamer - Portfolio Demo - Flex Client](https://github.com/Weswit/Lightstreamer-example-Portfolio-client-flex)
 * [Lightstreamer - Portfolio Demo - Dojo Toolkit Client](https://github.com/Weswit/Lightstreamer-example-Portfolio-client-dojo)
+
+<!-- END RELATED_ENTRIES -->
 
 ## Related projects ##
 * [Lightstreamer - Portfolio Demo - Java Adapter](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-java)
