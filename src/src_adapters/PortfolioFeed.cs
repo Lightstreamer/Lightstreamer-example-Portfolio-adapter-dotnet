@@ -48,6 +48,11 @@ namespace Lightstreamer.Adapters.PortfolioDemo.Feed
         /// if qty is 0 means that the stock was completely sold from the portfolio.
         /// </summary>
         void Update(string stock, int qty, int oldQty);
+
+        /// <summary>
+        /// May be called if the whole portfolio has to be cleaned at once.
+        /// <summary>
+        void Empty();
     }
 
     /// <summary>
@@ -399,6 +404,31 @@ namespace Lightstreamer.Adapters.PortfolioDemo.Feed
                     // in case the listener has just been detached,
                     // the listener should detect the case
                     localListener.Update(stockId, newVal, oldVal);
+                });
+            }
+        }
+
+        // never called in the demo, just showing the feature
+        [MethodImpl(MethodImplOptions.Synchronized)]
+        private void Empty()
+        {
+            _log.Debug("Cleaning status " + this.id);
+            
+            //remove all the quantities so that the portfolio will result empty
+            quantities.Clear();
+            
+            if (this.listener != null)
+            {
+                //copy the actual listener to a constant that will be used
+                //by the asynchronous notification
+                PortfolioListener localListener = this.listener;
+
+                executor.Add(delegate()
+                {
+                    // call the request on the listener;
+                    // in case the listener has just been detached,
+                    // the listener should detect the case
+                    localListener.Empty();
                 });
             }
         }

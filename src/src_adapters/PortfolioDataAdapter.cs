@@ -236,6 +236,13 @@ namespace Lightstreamer.Adapters.PortfolioDemo.Data
             // Pass the notice to Lightstreamer library
             listener.EndOfSnapshot(portfolioId);
         }
+
+        internal void ClearSnapshot(string portfolioId)
+        {
+            // The whole state has to be cleared.
+            // Pass the request to Lightstreamer library
+            listener.ClearSnapshot(portfolioId);
+        }
     }
 
 
@@ -287,6 +294,13 @@ namespace Lightstreamer.Adapters.PortfolioDemo.Data
             pda.OnEndSnapshot(this.portfolioId);
 
             _log.Info(this.portfolioId + ": snapshot sent");
+        }
+
+        public void Empty() {
+            //tell the server to clean its status
+            pda.ClearSnapshot(this.portfolioId);
+
+            _log.Info(this.portfolioId + ": snapshot cleared");
         }
     }
 }
