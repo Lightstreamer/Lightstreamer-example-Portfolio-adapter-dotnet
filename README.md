@@ -1,9 +1,18 @@
 # Lightstreamer - Portfolio Demo - .NET Adapter #
 <!-- START DESCRIPTION lightstreamer-example-portfolio-adapter-dotnet -->
+The *Portfolio Demo* simulate a portfolio management. It shows a list of stocks included in a portfolio and provide a simple order entry form. Changes to portfolio contents due to new orders are displayed on the page in real time.
+
+This project shows the .Net Data Adapter and Metadata Adapters for the *Portfolio Demo* and how they can be plugged into Lightstreamer Server.
+
+<!-- END DESCRIPTION lightstreamer-example-helloworld-adapter-dotnet -->
+
+As example of [Clients Using This Adapter](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-dotnet#clients-using-this-adapter), you may refer to the [Lightstreamer - Portfolio Demos - HTML Clients](https://github.com/Weswit/Lightstreamer-example-Portfolio-client-javascript) and view the corresponding [Live Demo](http://demos.lightstreamer.com/PortfolioDemo_Basic/).
+
+## Details
 
 This project contains the source code and all the resources needed to install a .NET version of the Portfolio Data and Metadata Adapters.
 
-## Dig the Code ##
+### Dig the Code
 The application is divided into 7 main classes.
 
 * <b>PortfolioDataAdapter.cs</b>: this is a C#/.NET porting of the [Lightstreamer - Portfolio Demo - Java Adapter](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-java). It inherits from the <i>IDataProvider</i> interface and calls back Lightstreamer through the IItemEventListener interface. Use it as a starting point to implement your custom data adapter in case of <b>COMMAND</b> mode subscription.<br>
