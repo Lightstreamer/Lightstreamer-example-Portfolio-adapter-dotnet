@@ -16,15 +16,14 @@ This project contains the source code and all the resources needed to install a 
 
 Lightstreamer Server exposes native Java Adapter interfaces. The .NET interfaces are added through the *Lightstreamer Adapter Remoting Infrastructure* (**ARI**). 
 
+The Architecture of ARI (Adapter Remoting Infrastructure) for .NET.
+
 ![General Architecture](generalarchitecture_new.png)
 
 ARI is simply made up of two Proxy Adapters and a *Network Protocol*. The two Proxy Adapters, one implementing the Data Adapter interface and the other implementing the Metadata Adapter interface, are meant to be plugged into Lightstreamer Kernel.
 
-Basically, the Proxy Data Adapter exposes the Data Adapter interface through TCP sockets. In other words, it offers a Network Protocol, which any remote counterpart can implement to behave as a Lightstreamer Data Adapter. This means you can write a remote Data Adapter in C, in PHP, or in COBOL (?!?), provided that you have access to plain TCP sockets.
-
-But if your remote Data Adapter is based on .NET, you can forget about direct socket programming, and leverage a ready-made library that exposes a higher level *.NET interface*. So, you will simply have to implement this .NET interface.
-
-Ok, let's recap... The Proxy Data Adapter converts from a Java interface to TCP sockets. The .NET library converts from TCP sockets to a .NET interface.
+Basically, the Proxy Data Adapter exposes the Data Adapter interface through TCP sockets. In other words, it offers a Network Protocol, which any remote counterpart can implement to behave as a Lightstreamer Data Adapter. This means you can write a remote Data Adapter in any language, provided that you have access to plain TCP sockets.
+But if your remote Data Adapter is based on .NET, you can leverage a ready-made library that exposes a higher level *.NET interface*. So, you will simply have to implement this .NET interface. So the Proxy Data Adapter converts from a Java interface to TCP sockets, and the .NET library converts from TCP sockets to a .NET interface.
 
 The full API references for the languages covered in this tutorial are available from [.NET API reference for Adapters](http://www.lightstreamer.com/docs/adapter_dotnet_api/index.html)
 
@@ -41,7 +40,7 @@ The application is divided into 7 main classes.
 
 Check out the sources for further explanations.
 
-*NOTE: At this stage, the demo is based on a version of LS .NET SDK that is currently available only as a prerelease. Skip the notes below and refer to the "for_Lightstreamer_5.1.1" tag for a demo version suitable for building and deploying.*
+**NOTE: At this stage, the demo is based on a version of LS .NET SDK that is currently available only as a prerelease. Skip the notes below and refer to the "for_Lightstreamer_5.1.1" tag for a demo version suitable for building and deploying.**
 <!-- END DESCRIPTION lightstreamer-example-portfolio-adapter-dotnet -->
 
 ## Install
@@ -57,15 +56,11 @@ If you want to install a version of this demo in your local Lightstreamer Server
 with:<BR/>
 `var lsClient = new LightstreamerClient(protocolToUse+"//localhost:"+portToUse,"PORTFOLIODEMO_REMOTE");`<BR/>
 (you don't need to reconfigure the Data Adapter name, as it is the same in both Adapter Sets).
-Moreover, as the referred Adapter Set has changed, make sure that the front-end does no longer share the Engine with demos.
-So a line like this:
-```js
-  lsClient.connectionSharing.enableSharing("PortfolioDemoCommonConnection", "ATTACH", "CREATE");
-```
-should become like this:
-```js
-  lsClient.connectionSharing.enableSharing("RemotePortfolioConnection", "ATTACH", "CREATE");
-```
+    * As the referred Adapter Set has changed, make sure that the front-end does no longer share the Engine with demos.
+So a line like this:<BR/>
+`lsClient.connectionSharing.enableSharing("PortfolioDemoCommonConnection", "ATTACH", "CREATE");`<BR/>
+should become like this:<BR/>
+`lsClient.connectionSharing.enableSharing("RemotePortfolioConnection", "ATTACH", "CREATE");`
     * Open a browser window and go to: [http://localhost:8080/PortfolioDemo_Basic/]()
     * <i>Please note that to run instead the [Portfolio Demo - HTML Client](https://github.com/Weswit/Lightstreamer-example-Portfolio-client-javascript#portfolio-demo---html-client) with full functionalities, your Lightstreamer server installation must have deployed both this adapter and the [Lightstreamer StockList Demo Adapter for .NET](https://github.com/Weswit/Lightstreamer-example-StockList-adapter-dotnet). In the deploy.zip  file of the [latest release](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-dotnet/releases) you can find `Full_Deployment_DotNet_Server` and `Full_Deployment_LS` folders, which contain an example of a combined deployment of the two Adapters.</i>
 
