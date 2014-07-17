@@ -1,6 +1,6 @@
 # Lightstreamer - Portfolio Demo - .NET Adapter #
 <!-- START DESCRIPTION lightstreamer-example-portfolio-adapter-dotnet -->
-The *Portfolio Demo* simulate a portfolio management. It shows a list of stocks included in a portfolio and provide a simple order entry form. Changes to portfolio contents due to new orders are displayed on the page in real time.
+The *Portfolio Demo* simulate a portfolio management: it shows a list of stocks included in a portfolio and provide a simple order entry form. Changes to portfolio contents due to new orders are displayed on the page in real time.
 
 This project shows the .Net Data Adapter and Metadata Adapters for the *Portfolio Demo* and how they can be plugged into Lightstreamer Server.
 
