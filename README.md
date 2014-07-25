@@ -79,7 +79,7 @@ To allow the two adapters to coexist within the same Adapter Set, please follow 
 * Launch the *Remote .NET Adapter Server*. Run the `DotNetServers.bat` script under the `Full_Deployment_DotNet_Server` directory. The script runs the `DotNetPortfolioDemoLauncher_N2.exe` Custom Launcher, which hosts both the Remote Data Adapter and the Remote Metadata Adapter for the .NET Portfolio Demo. In case of need, the .NET Server prints on the log a help page if run with the following syntax: "DotNetServer /help". Please note that the .NET Server connects to Proxy Adapters, not vice versa.
 * Test the Adapter, launching the [Portfolio Demo - HTML Client](https://github.com/Weswit/Lightstreamer-example-Portfolio-client-javascript#portfolio-demo---html-client).
     * In order to make the [Portfolio Demo - HTML Client](https://github.com/Weswit/Lightstreamer-example-Portfolio-client-javascript#portfolio-demo---html-client) front-end pages get data from the newly installed Adapter Set, you need to modify the front-end pages and set the required Adapter Set name to PORTFOLIODEMO_REMOTE when creating the LightstreamerClient instance. So edit the `lsClient.js` file of the Portfolio Demo front-end deployed under `Lightstreamer/pages/PortfolioDemo` and replace:<BR/>
-`var lsClient = new LightstreamerClient(protocolToUse+"//localhost:"+portToUse,"PORTFOLIODEMO");`<BR/>
+`var lsClient = new LightstreamerClient(protocolToUse+"//localhost:"+portToUse,"FULLPORTFOLIODEMO");`<BR/>
 with:<BR/>
 `var lsClient = new LightstreamerClient(protocolToUse+"//localhost:"+portToUse,"PORTFOLIODEMO_REMOTE");`<BR/>
 (you don't need to reconfigure the Data Adapter name, as it is the same in both Adapter Sets).
