@@ -81,7 +81,7 @@ To allow the two adapters to coexist within the same Adapter Set, please follow 
     * In order to make the [Portfolio Demo - HTML Client](https://github.com/Weswit/Lightstreamer-example-Portfolio-client-javascript#portfolio-demo---html-client) front-end pages get data from the newly installed Adapter Set, you need to modify the front-end pages and set the required Adapter Set name to PORTFOLIODEMO_REMOTE when creating the LightstreamerClient instance. So edit the `lsClient.js` file of the Portfolio Demo front-end deployed under `Lightstreamer/pages/PortfolioDemo` and replace:<BR/>
 `var lsClient = new LightstreamerClient(protocolToUse+"//localhost:"+portToUse,"FULLPORTFOLIODEMO");`<BR/>
 with:<BR/>
-`var lsClient = new LightstreamerClient(protocolToUse+"//localhost:"+portToUse,"PORTFOLIODEMO_REMOTE");`<BR/>
+`var lsClient = new LightstreamerClient(protocolToUse+"//localhost:"+portToUse,"FULLPORTFOLIODEMO_REMOTE");`<BR/>
 (you don't need to reconfigure the Data Adapter name, as it is the same in both Adapter Sets).
     * As the referred Adapter Set has changed, make sure that the front-end does no longer share the Engine with other demos.
 So a line like this:<BR/>
