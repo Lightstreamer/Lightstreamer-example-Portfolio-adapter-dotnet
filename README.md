@@ -59,7 +59,7 @@ If you want to install a basic version of the *.Net Portfolio Demo* in your loca
 with:<BR/>
 `var lsClient = new LightstreamerClient(protocolToUse+"//localhost:"+portToUse,"PORTFOLIODEMO_REMOTE");`<BR/>
 (you don't need to reconfigure the Data Adapter name, as it is the same in both Adapter Sets).
-    * As the referred Adapter Set has changed, make sure that the front-end does no longer share the Engine with demos.
+    * As the referred Adapter Set has changed, make sure that the front-end does no longer share the Engine with other demos.
 So a line like this:<BR/>
 `lsClient.connectionSharing.enableSharing("PortfolioDemoCommonConnection", "ATTACH", "CREATE");`<BR/>
 should become like this:<BR/>
@@ -83,7 +83,7 @@ To allow the two adapters to coexist within the same Adapter Set, please follow 
 with:<BR/>
 `var lsClient = new LightstreamerClient(protocolToUse+"//localhost:"+portToUse,"PORTFOLIODEMO_REMOTE");`<BR/>
 (you don't need to reconfigure the Data Adapter name, as it is the same in both Adapter Sets).
-    * As the referred Adapter Set has changed, make sure that the front-end does no longer share the Engine with demos.
+    * As the referred Adapter Set has changed, make sure that the front-end does no longer share the Engine with other demos.
 So a line like this:<BR/>
 `lsClient.connectionSharing.enableSharing("PortfolioDemoCommonConnection", "ATTACH", "CREATE");`<BR/>
 should become like this:<BR/>
