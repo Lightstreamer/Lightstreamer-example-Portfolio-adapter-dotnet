@@ -16,16 +16,11 @@ This project contains the source code and all the resources needed to install a 
 
 Lightstreamer Server exposes native Java Adapter interfaces. The .NET interfaces are added through the *Lightstreamer Adapter Remoting Infrastructure* (**ARI**). 
 
-The Architecture of ARI (Adapter Remoting Infrastructure) for .NET.
+*The Architecture of ARI (Adapter Remoting Infrastructure) for .NET.*
 
 ![General Architecture](generalarchitecture_new.png)
 
-ARI is simply made up of two Proxy Adapters and a *Network Protocol*. The two Proxy Adapters, one implementing the Data Adapter interface and the other implementing the Metadata Adapter interface, are meant to be plugged into Lightstreamer Kernel.
-
-Basically, the Proxy Data Adapter exposes the Data Adapter interface through TCP sockets. In other words, it offers a Network Protocol, which any remote counterpart can implement to behave as a Lightstreamer Data Adapter. This means you can write a remote Data Adapter in any language, provided that you have access to plain TCP sockets.
-But if your remote Data Adapter is based on .NET, you can leverage a ready-made library that exposes a higher level *.NET interface*. So, you will simply have to implement this .NET interface. So the Proxy Data Adapter converts from a Java interface to TCP sockets, and the .NET library converts from TCP sockets to a .NET interface.
-
-The full API references for the languages covered in this tutorial are available from [.NET API reference for Adapters](http://www.lightstreamer.com/docs/adapter_dotnet_api/index.html)
+You'll find more details about the *Adapter Remoting Infrastructure for .NET* at [.NET Interfaces](https://github.com/Weswit/Lightstreamer-example-HelloWorld-adapter-dotnet/blob/master/README.md#net-interfaces) in the [Lightstreamer - "Hello World" Tutorial - .NET Adapter](https://github.com/Weswit/Lightstreamer-example-HelloWorld-adapter-dotnet) project.
 
 ### Dig the Code
 The application is divided into 7 main classes.
