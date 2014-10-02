@@ -50,9 +50,13 @@ If you want to install a basic version of the *.Net Portfolio Demo* in your loca
 * Launch the *Remote .NET Adapter Server*. Run the `DotNetCustomServer.bat` script under the `Deployment_DotNet_Server(custom)` directory. The script runs the `DotNetPortfolioDemoLauncher_N2.exe` Custom Launcher, which hosts both the Remote Data Adapter and the Remote Metadata Adapter for the .NET Portfolio Demo. In case of need, the .NET Server prints on the log a help page if run with the following syntax: "DotNetServer /help". Please note that the .NET Server connects to Proxy Adapters, not vice versa.
 * Test the Adapter, launching the [Basic Portfolio Demo - HTML Client](https://github.com/Weswit/Lightstreamer-example-Portfolio-client-javascript#basic-portfolio-demo---html-client), listed in [Clients Using This Adapter](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-dotnet#clients-using-this-adapter).
     * To make the [Basic Portfolio Demo - HTML Client](https://github.com/Weswit/Lightstreamer-example-Portfolio-client-javascript#basic-portfolio-demo---html-client) front-end pages get data from the newly installed Adapter Set, you need to modify the front-end pages and set the required Adapter Set name to PORTFOLIODEMO_REMOTE when creating the LightstreamerClient instance. So edit the `lsClient.js` file of the Basic Portfolio Demo front-end deployed under `Lightstreamer/pages/PortfolioDemo_Basic` and replace:<BR/>
-`var lsClient = new LightstreamerClient(protocolToUse+"//localhost:"+portToUse,"PORTFOLIODEMO");`<BR/>
+```
+var lsClient = new LightstreamerClient(protocolToUse+"//localhost:"+portToUse,"PORTFOLIODEMO");
+```<BR/>
 with:<BR/>
-`var lsClient = new LightstreamerClient(protocolToUse+"//localhost:"+portToUse,"PORTFOLIODEMO_REMOTE");`<BR/>
+```
+var lsClient = new LightstreamerClient(protocolToUse+"//localhost:"+portToUse,"PORTFOLIODEMO_REMOTE");
+```<BR/>
 (you don't need to reconfigure the Data Adapter name, as it is the same in both Adapter Sets).
     * As the referred Adapter Set has changed, make sure that the front-end no longer shares the Engine with other demos.
 So a line like this:<BR/>
