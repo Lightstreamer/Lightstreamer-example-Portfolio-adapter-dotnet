@@ -14,13 +14,13 @@ This project contains the source code and all the resources needed to install a 
 
 ### .NET Interfaces
 
-Lightstreamer Server exposes native Java Adapter interfaces. The .NET interfaces are added through the [Lightstreamer Adapter Remoting Infrastructure (**ARI**)](http://www.lightstreamer.com/latest/Lightstreamer_Allegro-Presto-Vivace_5_1_Colosseo/Lightstreamer/DOCS-SDKs/sdk_adapter_remoting_infrastructure/doc/ARI%20Protocol.pdf) and form the [Adapter Remoting Infrastructure for .NET](http://www.lightstreamer.com/latest/Lightstreamer_Allegro-Presto-Vivace_5_1_Colosseo/Lightstreamer/DOCS-SDKs/sdk_adapter_dotnet/doc/DotNet%20Adapters.pdf). 
+Lightstreamer Server exposes native Java Adapter interfaces. The .NET interfaces are added through the [Lightstreamer Adapter Remoting Infrastructure (**ARI**)](http://www.lightstreamer.com/docs/ARI_base/ARI%20Protocol.pdf). 
 
-*The Architecture of [Adapter Remoting Infrastructure for .NET](http://www.lightstreamer.com/latest/Lightstreamer_Allegro-Presto-Vivace_5_1_Colosseo/Lightstreamer/DOCS-SDKs/sdk_adapter_dotnet/doc/DotNet%20Adapters.pdf).*
+*The Architecture of Adapter Remoting Infrastructure for .NET.*
 
 ![General Architecture](generalarchitecture_new.png)
 
-You'll find more details about the *Adapter Remoting Infrastructure for .NET* at [.NET Interfaces](https://github.com/Weswit/Lightstreamer-example-HelloWorld-adapter-dotnet/blob/master/README.md#net-interfaces) in the [Lightstreamer - "Hello World" Tutorial - .NET Adapter](https://github.com/Weswit/Lightstreamer-example-HelloWorld-adapter-dotnet) project.
+You'll find more details about the *SDK for .NET Adapters* at [.NET Interfaces](https://github.com/Weswit/Lightstreamer-example-HelloWorld-adapter-dotnet/blob/master/README.md#net-interfaces) in the [Lightstreamer - "Hello World" Tutorial - .NET Adapter](https://github.com/Weswit/Lightstreamer-example-HelloWorld-adapter-dotnet) project.
 
 ### Dig the Code
 The application is divided into 7 main classes.
@@ -90,8 +90,6 @@ should become like this:<BR/>
 `lsClient.connectionSharing.enableSharing("RemotePortfolioConnection", "ATTACH", "CREATE");`
     * Open a browser window and go to: [http://localhost:8080/PortfolioDemo](http://localhost:8080/PortfolioDemo)
 
-Please refer to the [LS DotNet Adapters.pdf](http://www.lightstreamer.com/latest/Lightstreamer_Allegro-Presto-Vivace_6_0_Colosseo/Lightstreamer/DOCS-SDKs/sdk_adapter_dotnet/doc/DotNet%20Adapters.pdf) document for further deployment details.
-
 ## Build
 
 To build your own version of `DotNetPortfolioDemo_N2.dll`, instead of using the one provided in the `deploy.zip` file from the [Install](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-dotnet#install) section above, follow these steps:
@@ -112,9 +110,7 @@ To build your own version of the Stand-Alone Launcher, follow these steps:
 
 ## See Also 
 
-* [Adapter Remoting Infrastructure
-Network Protocol Specification](http://www.lightstreamer.com/latest/Lightstreamer_Allegro-Presto-Vivace_5_1_Colosseo/Lightstreamer/DOCS-SDKs/sdk_adapter_remoting_infrastructure/doc/ARI%20Protocol.pdf)
-* [.NET Adapter Development](http://www.lightstreamer.com/latest/Lightstreamer_Allegro-Presto-Vivace_5_1_Colosseo/Lightstreamer/DOCS-SDKs/sdk_adapter_dotnet/doc/DotNet%20Adapters.pdf)
+* [Adapter Remoting Infrastructure Network Protocol Specification](http://www.lightstreamer.com/docs/ARI_base/ARI%20Protocol.pdf)
 * [.NET Adapter API Reference](http://www.lightstreamer.com/docs/adapter_dotnet_api/frames.html)
 
 ### Clients Using This Adapter 
@@ -131,5 +127,5 @@ Network Protocol Specification](http://www.lightstreamer.com/latest/Lightstreame
 
 ## Lightstreamer Compatibility Notes
 
-- Compatible with Lightstreamer SDK for .NET Adapters version 1.8
-- For a version of this example compatible with Lightstreamer SDK for .NET Adapters version 1.7, please refer to [this tag](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-dotnet/tree/for_Lightstreamer_5.1.1).
+* Compatible with Lightstreamer SDK for .NET Adapters version 1.9 or newer.
+- For a version of this example compatible with Lightstreamer SDK for .NET Adapters version 1.7, please refer to [this tag](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-dotnet/tree/for_Lightstreamer_5.1).
