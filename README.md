@@ -23,11 +23,16 @@ Lightstreamer Server exposes native Java Adapter interfaces. The .NET interfaces
 You'll find more details about the *SDK for .NET Adapters* at [.NET Interfaces](https://github.com/Weswit/Lightstreamer-example-HelloWorld-adapter-dotnet/blob/master/README.md#net-interfaces) in the [Lightstreamer - "Hello World" Tutorial - .NET Adapter](https://github.com/Weswit/Lightstreamer-example-HelloWorld-adapter-dotnet) project.
 
 ### Dig the Code
-The application is divided into 7 main classes.
+
+This project includes the implementation of the [IDataProvider](http://www.lightstreamer.com/docs/adapter_dotnet_api/Lightstreamer_Interfaces_Data_IDataProvider.html) interface and the [IMetadataProvider](http://www.lightstreamer.com/docs/adapter_dotnet_api/Lightstreamer_Interfaces_Metadata_IMetadataProvider.html) interface for the *Portfolio Demo*. 
+
+The application is divided into 6 main classes.
 
 * `PortfolioDataAdapter.cs`: this is a C#/.NET porting of the [Lightstreamer - Portfolio Demo - Java Adapter](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-java). It inherits from the `IDataProvider` interface and calls back Lightstreamer through the `IItemEventListener` interface. Use it as a starting point to implement your custom data adapter in case of `COMMAND` mode subscription.
-* `PortfolioBasedProvider.cs`: this is a C#/.NET porting of the Metadata Adapter in [Lightstreamer - Portfolio Demo - Java Adapter](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-java). It inherits from the `LiteralBasedProvider`, which is enough for all demo clients. In addition, it implements the `NotifyUserMessage` method, to handle `sendMessage` requests from the Portfolio Demo client. This allows the Portfolio Demo client to use `sendMessage` to submit buy/sell orders to the (simulated) portfolio feed used by the Portfolio Data Adapter.
-* `LiteralBasedProvider.cs`: this is a C#/.NET implementation of the `LiteralBasedProvider` Metadata Adapter in [Lightstreamer - Reusable Metadata Adapters - Java Adapter](https://github.com/Weswit/Lightstreamer-example-ReusableMetadata-adapter-java). It inherits from the `IMetadataProvider` interface. It can be used as a starting point to implement your custom metadata adapter.
+* `PortfolioMetadataAdapter.cs`: this is a C#/.NET porting of the Metadata Adapter in [Lightstreamer - Portfolio Demo - Java Adapter](https://github.com/Weswit/Lightstreamer-example-Portfolio-adapter-java).
+   It inherits from the `LiteralBasedProvider`, a simple Metadata Adapter already included in the .NET Adapter SDK binaries, which is enough for all demo clients;
+   see also [Lightstreamer - Reusable Metadata Adapters - .NET Adapter](https://github.com/Weswit/Lightstreamer-example-ReusableMetadata-adapter-dotnet).
+   In addition, it implements the `NotifyUserMessage` method, to handle `sendMessage` requests from the Portfolio Demo client. This allows the Portfolio Demo client to use `sendMessage` to submit buy/sell orders to the (simulated) portfolio feed used by the Portfolio Data Adapter.
 * `PortfolioFeed.cs`: used to receive data from the simulated portfolio feed in an asynchronous way.
 * `NotificationQueue.cs`: used to provide an executor of tasks in a single dedicated thread.
 * `StandaloneAdaptersLauncher.cs`: this is a stand-alone executable that launches both the Data Adapter and the Metadata Adapter for the .NET Portfolio Demo example. It redirects sockets connections from Lightstreamer to the .NET Servers implemented in the LS .NET SDK library and does not rely on the .NET Server wrapper provided.
