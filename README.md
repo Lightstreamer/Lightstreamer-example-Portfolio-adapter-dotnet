@@ -14,7 +14,7 @@ This project contains the source code and all the resources needed to install a 
 
 ### .NET Interfaces
 
-Lightstreamer Server exposes native Java Adapter interfaces. The .NET interfaces are added through the [Lightstreamer Adapter Remoting Infrastructure (**ARI**)](http://www.lightstreamer.com/docs/ARI_base/ARI%20Protocol.pdf). 
+Lightstreamer Server exposes native Java Adapter interfaces. The .NET interfaces are added through the [Lightstreamer Adapter Remoting Infrastructure (**ARI**)](http://www.lightstreamer.com/docs/adapter_generic_base/ARI%20Protocol.pdf). 
 
 *The Architecture of Adapter Remoting Infrastructure for .NET.*
 
@@ -113,7 +113,7 @@ To build your own version of the Stand-Alone Launcher, follow these steps:
 
 ## See Also 
 
-* [Adapter Remoting Infrastructure Network Protocol Specification](http://www.lightstreamer.com/docs/ARI_base/ARI%20Protocol.pdf)
+* [Adapter Remoting Infrastructure Network Protocol Specification](http://www.lightstreamer.com/docs/adapter_generic_base/ARI%20Protocol.pdf)
 * [.NET Adapter API Reference](http://www.lightstreamer.com/docs/adapter_dotnet_api/frames.html)
 
 ### Clients Using This Adapter 
