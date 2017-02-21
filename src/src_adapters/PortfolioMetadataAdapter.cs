@@ -75,7 +75,7 @@ namespace Lightstreamer.Adapters.PortfolioDemo.Metadata
                 // but must be provided explicitly,
                 // through the custom SetFeed method.
                 // As a consequence, this Adapter cannot be managed by the
-                // basic DotNetServer_N2.exe launcher provided by LS library,
+                // basic DotNetServer.exe launcher provided by LS library,
                 // but requires a custom launcher.
                 throw new MetadataProviderException("Portfolio feed not configured; currently, portfolio adapters can only be launched by the provided custom launcher");
             }

@@ -50,7 +50,7 @@ If you want to install a basic version of the *.Net Portfolio Demo* in your loca
 * Get the `deploy.zip` file of the [latest release](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-adapter-dotnet/releases) and unzip it
 * Plug the *Proxy Data Adapter* and the *Proxy MetaData Adapter* into the Server: go to the `Deployment_LS` folder and copy the `DotNetPortfolio` directory and all of its files to the `adapters` folder of your Lightstreamer Server installation. Refer to the comments embedded in the generic adapters.xml file template, `DOCS-SDKs/adapter_remoting_infrastructure/doc/adapter_conf_template/adapters.xml`, for further details on configuration options.
 * Launch *Lightstreamer Server*. The Server startup will complete only after a successful connection between the Proxy Adapters and the Remote Adapters.
-* Launch the *Remote .NET Adapter Server*. Run the `DotNetCustomServer.bat` script under the `Deployment_DotNet_Server(custom)` directory. The script runs the `DotNetPortfolioDemoLauncher_N2.exe` Custom Launcher, which hosts both the Remote Data Adapter and the Remote Metadata Adapter for the .NET Portfolio Demo. In case of need, the .NET Server prints on the log a help page if run with the following syntax: "DotNetServer /help". Please note that the .NET Server connects to Proxy Adapters, not vice versa.
+* Launch the *Remote .NET Adapter Server*. Run the `DotNetCustomServer.bat` script under the `Deployment_DotNet_Server(custom)` directory. The script runs the `DotNetPortfolioDemoLauncher.exe` Custom Launcher, which hosts both the Remote Data Adapter and the Remote Metadata Adapter for the .NET Portfolio Demo. In case of need, the .NET Server prints on the log a help page if run with the following syntax: "DotNetServer /help". Please note that the .NET Server connects to Proxy Adapters, not vice versa.
 * Test the Adapter, launching the [Basic Portfolio Demo - HTML Client](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-client-javascript#basic-portfolio-demo---html-client), listed in [Clients Using This Adapter](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-adapter-dotnet#clients-using-this-adapter).
     * To make the [Basic Portfolio Demo - HTML Client](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-client-javascript#basic-portfolio-demo---html-client) front-end pages get data from the newly installed Adapter Set, you need to modify the front-end pages and set the required Adapter Set name to PORTFOLIODEMO_REMOTE when creating the LightstreamerClient instance. So edit the `lsClient.js` file of the Basic Portfolio Demo front-end deployed under `Lightstreamer/pages/PortfolioDemo_Basic` and replace:<BR/>
     ```
@@ -79,7 +79,7 @@ To allow the two adapters to coexist within the same Adapter Set, please follow 
 * Get the `deploy.zip` file of the [latest release](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-adapter-dotnet/releases) and unzip it
 * Plug the *Proxy Data Adapter* and the *Proxy MetaData Adapter* into the Server: go to the `Full_Deployment_LS` folder and copy the `DotNetFullPortfolio` directory and all of its files to the `adapters` folder of your Lightstreamer Server installation. Refer to the comments embedded in the generic adapters.xml file template, `DOCS-SDKs/adapter_remoting_infrastructure/doc/adapter_conf_template/adapters.xml`, for further details on configuration options.
 * Launch *Lightstreamer Server*. The Server startup will complete only after a successful connection between the Proxy Adapters and the Remote Adapters.
-* Launch the *Remote .NET Adapter Server*. Run the `DotNetServers.bat` script under the `Full_Deployment_DotNet_Server` directory. The script runs the `DotNetPortfolioDemoLauncher_N2.exe` Custom Launcher, which hosts both the Remote Data Adapter and the Remote Metadata Adapter for the .NET Portfolio Demo. In case of need, the .NET Server prints on the log a help page if run with the following syntax: "DotNetServer /help". Please note that the .NET Server connects to Proxy Adapters, not vice versa.
+* Launch the *Remote .NET Adapter Server*. Run the `DotNetServers.bat` script under the `Full_Deployment_DotNet_Server` directory. The script runs the `DotNetPortfolioDemoLauncher.exe` Custom Launcher, which hosts both the Remote Data Adapter and the Remote Metadata Adapter for the .NET Portfolio Demo. In case of need, the .NET Server prints on the log a help page if run with the following syntax: "DotNetServer /help". Please note that the .NET Server connects to Proxy Adapters, not vice versa.
 * Test the Adapter, launching the [Portfolio Demo - HTML Client](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-client-javascript#portfolio-demo---html-client), listed in [Clients Using This Adapter](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-adapter-dotnet#clients-using-this-adapter).
     * To make the [Portfolio Demo - HTML Client](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-client-javascript#portfolio-demo---html-client) front-end pages get data from the newly installed Adapter Set, you need to modify the front-end pages and set the required Adapter Set name to PORTFOLIODEMO_REMOTE when creating the LightstreamerClient instance. So edit the `lsClient.js` file of the Portfolio Demo front-end deployed under `Lightstreamer/pages/PortfolioDemo` and replace:<BR/>
 `var lsClient = new LightstreamerClient(protocolToUse+"//localhost:"+portToUse,"FULLPORTFOLIODEMO");`<BR/>
@@ -95,17 +95,17 @@ should become like this:<BR/>
 
 ## Build
 
-To build your own version of `DotNetPortfolioDemo_N2.dll`, instead of using the one provided in the `deploy.zip` file from the [Install](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-adapter-dotnet#install) section above, follow these steps:
+To build your own version of `DotNetPortfolioDemo.dll`, instead of using the one provided in the `deploy.zip` file from the [Install](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-adapter-dotnet#install) section above, follow these steps:
 * Download this project.
-* Create a project for a library target and name it "DotNetPortfolioDemo_N2",
+* Create a project for a library target and name it "DotNetPortfolioDemo",
 * Include in the project the sources `src/src_adapters`.
-* Get the Lightstreamer .NET Adapter Server library `DotNetAdapter_N2.dll` file from the `DOCS-SDKs/sdk_adapter_dotnet/lib` folder of the [latest Lightstreamer distribution](http://download.lightstreamer.com/#current), and copy it into the `lib` directory.
-* Include in the project the reference to `DotNetAdapter_N2.dll` from the `lib` folder.
+* Get the Lightstreamer .NET Adapter Server library `DotNetAdapter.dll` file from the `DOCS-SDKs/sdk_adapter_dotnet/lib` folder of the [latest Lightstreamer distribution](http://download.lightstreamer.com/#current), and copy it into the `lib` directory.
+* Include in the project the reference to `DotNetAdapter.dll` from the `lib` folder.
 * Build Solution
 
 ### Build the Stand-Alone Launcher
 To build your own version of the Stand-Alone Launcher, follow these steps:
-* Create a project for a console application target and name it "DotNetPortfolioDemoLauncher_N2".
+* Create a project for a console application target and name it "DotNetPortfolioDemoLauncher".
 * Include in the project the source `src/StandaloneAdaptersLauncher.cs`
 * Include references to the Lightstreamer .NET Adapter Server library binaries (see above) and .NET Portfolio Demo Data Adapter binaries you have built in the previous step. 
 * Make sure that the entry point of the executable is the ServerMain class.
@@ -130,5 +130,6 @@ To build your own version of the Stand-Alone Launcher, follow these steps:
 
 ## Lightstreamer Compatibility Notes
 
-* Compatible with Lightstreamer SDK for .NET Adapters version 1.9.
+* Compatible with Lightstreamer SDK for .NET Adapters version 1.10.
+* For instructions compatible with Lightstreamer SDK for .NET Adapters version 1.9, please refer to [this tag](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-adapter-dotnet/releases/tag/for_version_1.9).
 * For source code of this example compatible with Lightstreamer SDK for .NET Adapters version 1.7, please refer to [this tree branch](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-adapter-dotnet/tree/b74faae97a192f939ef4fcf1ea83f3feedea08be).

@@ -145,7 +145,7 @@ namespace Lightstreamer.Adapters.PortfolioDemo
                     // We complete the Metadata Adapter initialization by supplying
                     // a reference to the feed simulator through a custom method;
                     // for this reason, the Portfolio Demo Metadata Adapter
-                    // does not support the basic DotNetServer_N2.exe launcher
+                    // does not support the basic DotNetServer.exe launcher
                     // provided by LS library,
                     adapter.SetFeed(feed);
 
@@ -166,7 +166,7 @@ namespace Lightstreamer.Adapters.PortfolioDemo
                     // We complete the Data Adapter initialization by supplying
                     // a reference to the feed simulator through a custom method;
                     // for this reason, the Portfolio Demo Data Adapter
-                    // does not support the basic DotNetServer_N2.exe launcher
+                    // does not support the basic DotNetServer.exe launcher
                     // provided by LS library,
                     adapter.SetFeed(feed);
 
