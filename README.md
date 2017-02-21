@@ -130,5 +130,5 @@ To build your own version of the Stand-Alone Launcher, follow these steps:
 
 ## Lightstreamer Compatibility Notes
 
-* Compatible with Lightstreamer SDK for .NET Adapters version 1.9 or newer.
+* Compatible with Lightstreamer SDK for .NET Adapters version 1.9.
 * For source code of this example compatible with Lightstreamer SDK for .NET Adapters version 1.7, please refer to [this tree branch](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-adapter-dotnet/tree/b74faae97a192f939ef4fcf1ea83f3feedea08be).
