@@ -283,8 +283,18 @@ namespace Lightstreamer.Adapters.PortfolioDemo
 
         public bool handleIOException(Exception exception)
         {
-            _log.Error("Connection to Lightstreamer Server closed");
-            _closed = true;
+            lock (this)
+            {
+                if (_closed)
+                {
+                    return false;
+                }
+                else
+                {
+                    _log.Error("Connection to Lightstreamer Server closed");
+                    _closed = true;
+                }
+            }
             _server.Close();
             System.Environment.Exit(0);
             return false;
@@ -292,12 +302,20 @@ namespace Lightstreamer.Adapters.PortfolioDemo
 
         public bool handleException(Exception exception)
         {
-            if (!_closed)
+            lock (this)
             {
-                _log.Error("Caught exception: " + exception.Message, exception);
-                _server.Close();
-                System.Environment.Exit(1);
+                if (_closed)
+                {
+                    return false;
+                }
+                else
+                {
+                    _log.Error("Caught exception: " + exception.Message, exception);
+                    _closed = true;
+                }
             }
+            _server.Close();
+            System.Environment.Exit(1);
             return false;
         }
 
