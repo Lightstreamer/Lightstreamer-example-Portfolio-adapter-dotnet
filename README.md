@@ -46,7 +46,7 @@ Check out the sources for further explanations.
 ### Install the Basic Portfolio Demo
 If you want to install a basic version of the *.Net Portfolio Demo* in your local Lightstreamer Server, follow the steps below.
 
-* Download the [latest Lightstreamer distribution](http://download.lightstreamer.com/#current) (see the [Compatibility Notes](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-adapter-dotnet#lightstreamer-compatibility-notes) for more details about the correct version; Lightstreamer Server comes with a free non-expiring demo license for 20 connected users) from [Lightstreamer Download page](http://www.lightstreamer.com/download.htm), and install it, as explained in the `GETTING_STARTED.TXT` file in the installation home directory.
+* Download the [latest Lightstreamer distribution](http://www.lightstreamer.com/download/) (see the [Compatibility Notes](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-adapter-dotnet#lightstreamer-compatibility-notes) for more details about the correct version; Lightstreamer Server comes with a free non-expiring demo license for 20 connected users) from [Lightstreamer Download page](http://www.lightstreamer.com/download.htm), and install it, as explained in the `GETTING_STARTED.TXT` file in the installation home directory.
 * Get the `deploy.zip` file of the [latest release](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-adapter-dotnet/releases) and unzip it
 * Plug the *Proxy Data Adapter* and the *Proxy MetaData Adapter* into the Server: go to the `Deployment_LS` folder and copy the `DotNetPortfolio` directory and all of its files to the `adapters` folder of your Lightstreamer Server installation. Refer to the comments embedded in the generic adapters.xml file template, `DOCS-SDKs/adapter_remoting_infrastructure/doc/adapter_conf_template/adapters.xml`, for further details on configuration options.
 * Launch *Lightstreamer Server*. The Server startup will complete only after a successful connection between the Proxy Adapters and the Remote Adapters.
@@ -75,7 +75,7 @@ To work with full functionality, the [Portfolio Demo - HTML Client](https://gith
 If you want to install a full version of the *Portfolio Demo* in your local Lightstreamer Server, you have to deploy the *PORTFOLIO_ADAPTER* and the *QUOTE_ADAPTER* together in the same Adapter Set. 
 To allow the two adapters to coexist within the same Adapter Set, please follow the steps below.
 
-* Download the [latest Lightstreamer distribution](http://download.lightstreamer.com/#current) (see the [Compatibility Notes](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-adapter-dotnet#lightstreamer-compatibility-notes) for more details about the correct version; Lightstreamer Server comes with a free non-expiring demo license for 20 connected users) from [Lightstreamer Download page](http://www.lightstreamer.com/download.htm), and install it, as explained in the `GETTING_STARTED.TXT` file in the installation home directory.
+* Download the [latest Lightstreamer distribution](http://www.lightstreamer.com/download/) (see the [Compatibility Notes](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-adapter-dotnet#lightstreamer-compatibility-notes) for more details about the correct version; Lightstreamer Server comes with a free non-expiring demo license for 20 connected users) from [Lightstreamer Download page](http://www.lightstreamer.com/download.htm), and install it, as explained in the `GETTING_STARTED.TXT` file in the installation home directory.
 * Get the `deploy.zip` file of the [latest release](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-adapter-dotnet/releases) and unzip it
 * Plug the *Proxy Data Adapter* and the *Proxy MetaData Adapter* into the Server: go to the `Full_Deployment_LS` folder and copy the `DotNetFullPortfolio` directory and all of its files to the `adapters` folder of your Lightstreamer Server installation. Refer to the comments embedded in the generic adapters.xml file template, `DOCS-SDKs/adapter_remoting_infrastructure/doc/adapter_conf_template/adapters.xml`, for further details on configuration options.
 * Launch *Lightstreamer Server*. The Server startup will complete only after a successful connection between the Proxy Adapters and the Remote Adapters.
@@ -99,7 +99,7 @@ To build your own version of `DotNetPortfolioDemo.dll`, instead of using the one
 * Download this project.
 * Create a project for a library target and name it "DotNetPortfolioDemo",
 * Include in the project the sources `src/src_adapters`.
-* Get the Lightstreamer .NET Adapter Server library `DotNetAdapter.dll` file from the `DOCS-SDKs/sdk_adapter_dotnet/lib` folder of the [latest Lightstreamer distribution](http://download.lightstreamer.com/#current), and copy it into the `lib` directory.
+* Get the Lightstreamer .NET Adapter Server library `DotNetAdapter.dll` file from the `DOCS-SDKs/sdk_adapter_dotnet/lib` folder of the [latest Lightstreamer distribution](http://www.lightstreamer.com/download/), and copy it into the `lib` directory.
 * Include in the project the reference to `DotNetAdapter.dll` from the `lib` folder.
 * Build Solution
 
