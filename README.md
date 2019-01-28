@@ -14,7 +14,7 @@ This project contains the source code and all the resources needed to build a .N
 
 ### .NET Interfaces
 
-Lightstreamer Server exposes native Java Adapter interfaces. The .NET interfaces are added through the [Lightstreamer Adapter Remoting Infrastructure (**ARI**)](http://www.lightstreamer.com/docs/adapter_generic_base/ARI%20Protocol.pdf). 
+Lightstreamer Server exposes native Java Adapter interfaces. The .NET interfaces are added through the [Lightstreamer Adapter Remoting Infrastructure (**ARI**)](https://www.lightstreamer.com/docs/adapter_generic_base/ARI%20Protocol.pdf). 
 
 *The Architecture of Adapter Remoting Infrastructure for .NET.*
 
@@ -47,7 +47,7 @@ Check out the sources for further explanations.
 If you want to install a basic version of the *.Net Portfolio Demo* in your local Lightstreamer Server, follow the steps below.
 
 * Download the [latest Lightstreamer distribution](http://www.lightstreamer.com/download/) (see the [Compatibility Notes](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-adapter-dotnet#lightstreamer-compatibility-notes) for more details about the correct version; Lightstreamer Server comes with a free non-expiring demo license for 20 connected users) from [Lightstreamer Download page](http://www.lightstreamer.com/download.htm), and install it, as explained in the `GETTING_STARTED.TXT` file in the installation home directory.
-* Get the `deploy.zip` file of the [latest release](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-adapter-dotnet/releases) and unzip it
+* Get the `deploy.zip` file of the [latest release](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-adapter-dotnet/releases) and unzip it.
 * Plug the *Proxy Data Adapter* and the *Proxy MetaData Adapter* into the Server: go to the `Deployment_LS` folder and copy the `DotNetPortfolio` directory and all of its files to the `adapters` folder of your Lightstreamer Server installation. Refer to the comments embedded in the generic adapters.xml file template, `DOCS-SDKs/adapter_remoting_infrastructure/doc/adapter_conf_template/adapters.xml`, for further details on configuration options.
 * Launch *Lightstreamer Server*. The Server startup will complete only after a successful connection between the Proxy Adapters and the Remote Adapters.
 * Launch the *Remote .NET Adapters*. Run the `PortfolioDemoLauncher.bat` script under the `Deployment_DotNet_Adapters` directory. The script runs the `PortfolioDemoLauncher` which hosts both the Remote Data Adapter and the Remote Metadata Adapter for the .NET Portfolio Demo. In case of need, the application prints on the log a help page if run with the following syntax: "dotnet PortfolioDemoLauncher.dll /help". Please note that the .NET Remote Adapters connect to Proxy Adapters, not vice versa.
@@ -71,12 +71,12 @@ should become like this:<BR/>
 
 
 ### Install the Portfolio Demo
-To work with full functionality, the [Portfolio Demo - HTML Client](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-client-javascript#portfolio-demo---html-client), needs both the *PORTFOLIO_ADAPTER*, from the *Portfolio Demo*, and the *QUOTE_ADAPTER*, from the *Stock-List Demo* (see [Lightstreamer StockList Demo Adapter for .NET](https://github.com/Lightstreamer/Lightstreamer-example-StockList-adapter-dotnet)). 
+To work with full functionality, the [Portfolio Demo - HTML Client](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-client-javascript#portfolio-demo---html-client), needs both the *PORTFOLIO_ADAPTER*, from the *Portfolio Demo*, and the *QUOTE_ADAPTER*, from the *Stock-List Demo* (see [Lightstreamer StockList Demo Adapter for .NET](https://github.com/Lightstreamer/Lightstreamer-example-StockList-adapter-dotnet)).
 If you want to install a full version of the *Portfolio Demo* in your local Lightstreamer Server, you have to deploy the *PORTFOLIO_ADAPTER* and the *QUOTE_ADAPTER* together in the same Adapter Set. 
 To allow the two adapters to coexist within the same Adapter Set, please follow the steps below.
 
 * Download the [latest Lightstreamer distribution](http://www.lightstreamer.com/download/) (see the [Compatibility Notes](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-adapter-dotnet#lightstreamer-compatibility-notes) for more details about the correct version; Lightstreamer Server comes with a free non-expiring demo license for 20 connected users) from [Lightstreamer Download page](http://www.lightstreamer.com/download.htm), and install it, as explained in the `GETTING_STARTED.TXT` file in the installation home directory.
-* Get the `deploy.zip` file of the [latest release](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-adapter-dotnet/releases) and unzip it
+* Get the `deploy.zip` file of the [latest release](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-adapter-dotnet/releases) and unzip it.
 * Plug the *Proxy Data Adapter* and the *Proxy MetaData Adapter* into the Server: go to the `Full_Deployment_LS` folder and copy the `DotNetFullPortfolio` directory and all of its files to the `adapters` folder of your Lightstreamer Server installation. Refer to the comments embedded in the generic adapters.xml file template, `DOCS-SDKs/adapter_remoting_infrastructure/doc/adapter_conf_template/adapters.xml`, for further details on configuration options.
 * Launch *Lightstreamer Server*. The Server startup will complete only after a successful connection between the Proxy Adapters and the Remote Adapters.
 * Launch the *Remote .NET Adapters*. Run the `PortfolioFullDemoLauncher.bat` script under the `Full_Deployment_DotNet_Adapters` directory. The script runs two Data Adapters, one for the Portfolio Demo and one for the StockList, and a single Metadata Adapter.
@@ -115,7 +115,7 @@ To build your own version of the Stand-Alone Launcher, follow these steps:
 
 ## See Also 
 
-* [Adapter Remoting Infrastructure Network Protocol Specification](http://www.lightstreamer.com/docs/adapter_generic_base/ARI%20Protocol.pdf)
+* [Adapter Remoting Infrastructure Network Protocol Specification](https://www.lightstreamer.com/docs/adapter_generic_base/ARI%20Protocol.pdf)
 * [.NET Standard Adapter API Reference](https://lightstreamer.com/api/ls-dotnetstandard-adapter/latest/frames.html?frmname=topic&frmfile=index.html)
 
 ### Clients Using This Adapter 
