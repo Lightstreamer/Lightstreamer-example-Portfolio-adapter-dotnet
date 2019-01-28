@@ -116,7 +116,7 @@ To build your own version of the Stand-Alone Launcher, follow these steps:
 ## See Also 
 
 * [Adapter Remoting Infrastructure Network Protocol Specification](http://www.lightstreamer.com/docs/adapter_generic_base/ARI%20Protocol.pdf)
-* [.NET Adapter API Reference](https://lightstreamer.com/api/ls-dotnetstandard-adapter/latest/frames.html?frmname=topic&frmfile=index.html)
+* [.NET Standard Adapter API Reference](https://lightstreamer.com/api/ls-dotnetstandard-adapter/latest/frames.html?frmname=topic&frmfile=index.html)
 
 ### Clients Using This Adapter 
 <!-- START RELATED_ENTRIES -->
