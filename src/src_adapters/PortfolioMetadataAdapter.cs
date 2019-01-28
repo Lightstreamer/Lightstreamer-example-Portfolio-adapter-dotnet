@@ -20,8 +20,6 @@ using System;
 using System.Collections;
 using System.Text;
 
-using log4net;
-
 using Lightstreamer.Interfaces.Metadata;
 using Lightstreamer.Adapters.Metadata;
 using Lightstreamer.Adapters.PortfolioDemo.Feed;
@@ -47,7 +45,7 @@ namespace Lightstreamer.Adapters.PortfolioDemo.Metadata
         /// A specific "Lightstreamer.Adapters.PortfolioDemo" log category
         /// can be defined.
         /// </summary>
-        private static ILog _log = LogManager.GetLogger("Lightstreamer.Adapters.PortfolioDemo");
+        private static NLog.Logger _log = NLog.LogManager.GetLogger("Lightstreamer.Adapters.PortfolioDemo");
 
         /// <summary>
         /// The associated feed to which buy and sell operations will be forwarded.

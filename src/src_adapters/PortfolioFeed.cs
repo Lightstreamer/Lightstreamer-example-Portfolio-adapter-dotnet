@@ -23,8 +23,6 @@ using System.Text;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-using log4net;
-
 namespace Lightstreamer.Adapters.PortfolioDemo.Feed
 {
     /// <summary>
@@ -73,7 +71,7 @@ namespace Lightstreamer.Adapters.PortfolioDemo.Feed
         /// A specific "Lightstreamer.Adapters.PortfolioDemo" log category
         /// can be defined.
         /// </summary>
-        private static ILog _log = LogManager.GetLogger("Lightstreamer.Adapters.PortfolioDemo");
+        private static NLog.Logger _log = NLog.LogManager.GetLogger("Lightstreamer.Adapters.PortfolioDemo");
 
         /// <summary>
         /// Map of portfolios.
@@ -255,7 +253,7 @@ namespace Lightstreamer.Adapters.PortfolioDemo.Feed
     /// </summary>
     public class Portfolio
     {
-        private static ILog _log = LogManager.GetLogger("Lightstreamer.Adapters.PortfolioDemo");
+        private static NLog.Logger _log = NLog.LogManager.GetLogger("Lightstreamer.Adapters.PortfolioDemo");
 
         /// <summary>
         /// Single listener for the contents.

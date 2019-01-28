@@ -21,8 +21,6 @@ using System.Collections;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-using log4net;
-
 using Lightstreamer.Interfaces.Data;
 using Lightstreamer.Adapters.PortfolioDemo.Feed;
 
@@ -47,7 +45,7 @@ namespace Lightstreamer.Adapters.PortfolioDemo.Data
         /// A specific "Lightstreamer.Adapters.PortfolioDemo" log category
         /// can be defined.
         /// </summary>
-        private static ILog _log = LogManager.GetLogger("Lightstreamer.Adapters.PortfolioDemo");
+        private static NLog.Logger _log = NLog.LogManager.GetLogger("Lightstreamer.Adapters.PortfolioDemo");
 
         /// <summary>
         /// The listener of updates provided by Lightstreamer library.
@@ -251,7 +249,7 @@ namespace Lightstreamer.Adapters.PortfolioDemo.Data
     /// </summary>
     class MyPortfolioListener : PortfolioListener
     {
-        private static ILog _log = LogManager.GetLogger("Lightstreamer.Adapters.PortfolioDemo");
+        private static NLog.Logger _log = NLog.LogManager.GetLogger("Lightstreamer.Adapters.PortfolioDemo");
 
         private string portfolioId;
         private PortfolioAdapter pda;
