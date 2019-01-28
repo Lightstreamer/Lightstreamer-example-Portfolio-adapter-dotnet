@@ -23,9 +23,9 @@ namespace Lightstreamer.DotNet.Server
 {
     class Log4NetLoggerWrapper : ILogger
     {
-        private log4net.ILog wrapped;
+        private NLog.ILogger wrapped;
 
-        public Log4NetLoggerWrapper(log4net.ILog wrapped)
+        public Log4NetLoggerWrapper(NLog.ILogger wrapped)
         {
             this.wrapped = wrapped;
         }
@@ -116,7 +116,7 @@ namespace Lightstreamer.DotNet.Server
             {
                 if (!logInstances.ContainsKey(category))
                 {
-                    logInstances[category] = new Log4NetLoggerWrapper(log4net.LogManager.GetLogger(category));
+                    logInstances[category] = new Log4NetLoggerWrapper(NLog.LogManager.GetLogger(category));
                 }
                 return logInstances[category];
             }

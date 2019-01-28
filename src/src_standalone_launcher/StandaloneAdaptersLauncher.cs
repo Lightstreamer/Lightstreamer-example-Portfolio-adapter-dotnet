@@ -22,18 +22,15 @@ using System.Threading;
 using System.IO;
 using System.Net.Sockets;
 
-using log4net;
-
 using Lightstreamer.DotNet.Server;
 using Lightstreamer.Adapters.PortfolioDemo.Feed;
 
-[assembly: log4net.Config.XmlConfigurator()]
 
 namespace Lightstreamer.Adapters.PortfolioDemo
 {
     public class AdaptersLauncher
     {
-        private static ILog _log = LogManager.GetLogger("Lightstreamer.Adapters.PortfolioDemo.AdaptersLauncher");
+        private static NLog.Logger _log = NLog.LogManager.GetLogger("Lightstreamer.Adapters.PortfolioDemo.AdaptersLauncher");
 
         public const string PREFIX1 = "-";
         public const string PREFIX2 = "/";
@@ -217,7 +214,7 @@ namespace Lightstreamer.Adapters.PortfolioDemo
 
     public class ServerStarter : IExceptionHandler
     {
-        private static ILog _log = LogManager.GetLogger("Lightstreamer.Adapters.PortfolioDemo.ServerStarter");
+        private static NLog.Logger _log = NLog.LogManager.GetLogger("Lightstreamer.Adapters.PortfolioDemo.ServerStarter");
 
         private Server _server;
         private bool _closed;
