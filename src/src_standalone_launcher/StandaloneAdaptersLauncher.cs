@@ -25,6 +25,8 @@ using System.Net.Sockets;
 using Lightstreamer.DotNet.Server;
 using Lightstreamer.Adapters.PortfolioDemo.Feed;
 
+using NLog;
+
 
 namespace Lightstreamer.Adapters.PortfolioDemo
 {
@@ -48,6 +50,16 @@ namespace Lightstreamer.Adapters.PortfolioDemo
 
         public static void Main(string[] args)
         {
+            var config = new NLog.Config.LoggingConfiguration();
+
+            var logfile = new NLog.Targets.FileTarget("logfile") { FileName = "TestAdapter.log" };
+            var logconsole = new NLog.Targets.ConsoleTarget("logconsole");
+
+            config.AddRule(LogLevel.Debug, LogLevel.Fatal, logconsole);
+            config.AddRule(LogLevel.Info, LogLevel.Fatal, logfile);
+
+            NLog.LogManager.Configuration = config;
+
             if (args.Length == 0) Help();
 
             _log.Info("Lightstreamer PortfolioDemo .NET Adapter Custom Server starting...");
