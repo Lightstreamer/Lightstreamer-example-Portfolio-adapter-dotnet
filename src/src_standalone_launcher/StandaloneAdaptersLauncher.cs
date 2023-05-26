@@ -212,8 +212,10 @@ namespace Lightstreamer.Adapters.PortfolioDemo
             _log.Fatal("Notes: (1) The adapter name is optional, if it is not given the adapter will be");
             _log.Fatal("           assigned a progressive number name like \"#1\", \"#2\" and so on");
             _log.Fatal("       (2) The communication will be from here to LS, not viceversa");
-            _log.Fatal("       (3) The notification port is necessary for a Data Adapter, while it is");
-            _log.Fatal("           not needed for a Metadata Adapter");
+            _log.Fatal("       (3) The notification port is necessary for a Data Adapter");
+            _log.Fatal("           (at least, this is mandatory for Servers earlier than 7.4,");
+            _log.Fatal("           then it is supported for backward compatibility),");
+            _log.Fatal("           while it is not needed for a Metadata Adapter");
             _log.Fatal("       (4) The parameters name/value pairs will be passed to the PortfolioDemo");
             _log.Fatal("           Metadata Adapter (to be forwarded to the embedded LiteralBasedProvider)");
             _log.Fatal("           as a Hashtable in the \"parameters\" Init() argument");
