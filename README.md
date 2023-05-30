@@ -4,8 +4,6 @@ The *Portfolio Demo* simulate a portfolio management: it shows a list of stocks 
 
 This project shows the .Net Data Adapter and Metadata Adapters for the *Portfolio Demo* and how they can be plugged into Lightstreamer Server. It also shows how to integrate the [Lightstreamer - Stock-List Demo - .NET Adapter](https://github.com/Lightstreamer/Lightstreamer-example-StockList-adapter-dotnet) into the same Adapter Set to support the full version of the *Portfolio Demo*.   
 
-<!-- END DESCRIPTION lightstreamer-example-helloworld-adapter-dotnet -->
-
 As an example of [Clients Using This Adapter](#clients-using-this-adapter), you may refer to the [Basic Portfolio Demo - HTML Client](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-client-javascript#basic-portfolio-demo---html-client) and view the corresponding [Basic Portfolio Demo Live Demo](http://demos.lightstreamer.com/PortfolioDemo_Basic/), or you may refer to the [Portfolio Demo - HTML Client](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-client-javascript#portfolio-demo---html-client) and view the corresponding [Portfolio Demo Live Demo](http://demos.lightstreamer.com/PortfolioDemo/) for the full version of the *Portfolio Demo*.
 
 ## Details
@@ -132,5 +130,7 @@ To build your own version of the Stand-Alone Launcher, follow these steps:
 
 ## Lightstreamer Compatibility Notes
 
-* Compatible with Lightstreamer SDK for .NET Standard Adapters since version 1.15.
-* For instructions compatible with Lightstreamer SDK for .NET Adapters version 1.10, please refer to [this tag](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-adapter-dotnet/tree/current_1.10).
+* Compatible with Lightstreamer SDK for .NET Standard Adapters version 1.15 or newer and Lightstreamer Server version 7.4 or newer.
+- For a version of this example compatible with Lightstreamer Server version since 7.0, please refer to [this tag](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-adapter-dotnet/tree/for_Lightstreamer_7.3).
+- For instructions compatible with Lightstreamer SDK for .NET Adapters version 1.12 to 1.14, please refer to [this tag](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-adapter-dotnet/tree/for_Lightstreamer_7.3).
+- For instructions compatible with Lightstreamer SDK for .NET Adapters version 1.10, please refer to [this tag](https://github.com/Lightstreamer/Lightstreamer-example-Portfolio-adapter-dotnet/tree/current_1.10).

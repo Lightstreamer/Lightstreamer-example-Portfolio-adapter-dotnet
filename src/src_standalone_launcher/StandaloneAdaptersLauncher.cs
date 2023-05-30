@@ -45,7 +45,6 @@ namespace Lightstreamer.Adapters.PortfolioDemo
         public const string ARG_HOST = "host";
         public const string ARG_METADATA_RR_PORT = "metadata_rrport";
         public const string ARG_DATA_RR_PORT = "data_rrport";
-        public const string ARG_DATA_NOTIF_PORT = "data_notifport";
         public const string ARG_NAME = "name";
 
         public static void Main(string[] args)
@@ -70,7 +69,6 @@ namespace Lightstreamer.Adapters.PortfolioDemo
             string host = null;
             int rrPortMD = -1;
             int rrPortD = -1;
-            int notifPortD = -1;
             string name = null;
 
             for (int i = 0; i < args.Length; i++)
@@ -105,13 +103,6 @@ namespace Lightstreamer.Adapters.PortfolioDemo
                         rrPortD = Int32.Parse(args[i]);
 
                         _log.Debug("Found argument: '" + ARG_DATA_RR_PORT + "' with value: '" + rrPortD + "'");
-                    }
-                    else if (arg.Equals(ARG_DATA_NOTIF_PORT))
-                    {
-                        i++;
-                        notifPortD = Int32.Parse(args[i]);
-
-                        _log.Debug("Found argument: '" + ARG_DATA_NOTIF_PORT + "' with value: '" + notifPortD + "'");
                     }
                     else if (arg.Equals(ARG_NAME))
                     {
@@ -164,7 +155,7 @@ namespace Lightstreamer.Adapters.PortfolioDemo
                     if (name != null) server.Name = name;
                     _log.Debug("Remote Metadata Adapter initialized");
 
-                    ServerStarter starter = new ServerStarter(host, rrPortMD, -1);
+                    ServerStarter starter = new ServerStarter(host, rrPortMD);
                     starter.Launch(server);
                 }
 
@@ -185,7 +176,7 @@ namespace Lightstreamer.Adapters.PortfolioDemo
                     if (name != null) server.Name = name;
                     _log.Debug("Remote Data Adapter initialized");
 
-                    ServerStarter starter = new ServerStarter(host, rrPortD, notifPortD);
+                    ServerStarter starter = new ServerStarter(host, rrPortD);
                     starter.Launch(server);
                 }
             }
@@ -202,19 +193,17 @@ namespace Lightstreamer.Adapters.PortfolioDemo
             _log.Fatal("Lightstreamer PortfolioDemo .NET Adapter Custom Server Help");
             _log.Fatal("Usage: DotNetPortfolioDemoLauncher");
             _log.Fatal("                     [/name <name>] /host <address>");
-            _log.Fatal("                     /metadata_rrport <port> /data_rrport <port> /data_notifport <port>");
+            _log.Fatal("                     /metadata_rrport <port> /data_rrport <port>");
             _log.Fatal("                     [\"<param1>=<value1>\" ... \"<paramN>=<valueN>\"]");
             _log.Fatal("Where: <name>        is the symbolic name for both the adapters (1)");
             _log.Fatal("       <address>     is the host name or ip address of LS server (2)");
-            _log.Fatal("       <port>        is the tcp port number where LS proxy is listening on (3)");
-            _log.Fatal("       <paramN>      is the Nth metadata adapter parameter name (4)");
-            _log.Fatal("       <valueN>      is the value of the Nth metadata adapter parameter (4)");
+            _log.Fatal("       <port>        is a tcp port number where LS proxy is listening on");
+            _log.Fatal("       <paramN>      is the Nth metadata adapter parameter name (3)");
+            _log.Fatal("       <valueN>      is the value of the Nth metadata adapter parameter (3)");
             _log.Fatal("Notes: (1) The adapter name is optional, if it is not given the adapter will be");
             _log.Fatal("           assigned a progressive number name like \"#1\", \"#2\" and so on");
             _log.Fatal("       (2) The communication will be from here to LS, not viceversa");
-            _log.Fatal("       (3) The notification port is necessary for a Data Adapter, while it is");
-            _log.Fatal("           not needed for a Metadata Adapter");
-            _log.Fatal("       (4) The parameters name/value pairs will be passed to the PortfolioDemo");
+            _log.Fatal("       (3) The parameters name/value pairs will be passed to the PortfolioDemo");
             _log.Fatal("           Metadata Adapter (to be forwarded to the embedded LiteralBasedProvider)");
             _log.Fatal("           as a Hashtable in the \"parameters\" Init() argument");
             _log.Fatal("           The PortfolioDemo Data Adapter requires no parameters");
@@ -233,13 +222,11 @@ namespace Lightstreamer.Adapters.PortfolioDemo
 
         private string _host;
         private int _rrPort;
-        private int _notifPort;
 
-        public ServerStarter(string host, int rrPort, int notifPort)
+        public ServerStarter(string host, int rrPort)
         {
             _host = host;
             _rrPort = rrPort;
-            _notifPort = notifPort;
         }
 
         public void Launch(Server server)
@@ -254,7 +241,6 @@ namespace Lightstreamer.Adapters.PortfolioDemo
         public void Run()
         {
             TcpClient _rrSocket = null;
-            TcpClient _notifSocket = null;
 
             do
             {
@@ -264,12 +250,6 @@ namespace Lightstreamer.Adapters.PortfolioDemo
                 {
                     _log.Info("Opening connection on port " + _rrPort + "...");
                     _rrSocket = new TcpClient(_host, _rrPort);
-                    if (_notifPort >= 0)
-                    {
-                        _log.Info("Opening connection on port " + _notifPort + "...");
-                        _notifSocket = new TcpClient(_host, _notifPort);
-                    }
-
                     _log.Info("Connected");
 
                     break;
@@ -277,15 +257,14 @@ namespace Lightstreamer.Adapters.PortfolioDemo
                 catch (SocketException)
                 {
                     _log.Warn("Connection failed, retrying in 10 seconds...");
-
                     Thread.Sleep(10000);
                 }
 
             } while (true);
 
-            _server.RequestStream = _rrSocket.GetStream();
-            _server.ReplyStream = _rrSocket.GetStream();
-            if (_notifSocket != null) _server.NotifyStream = _notifSocket.GetStream();
+            Stream _rrStream = _rrSocket.GetStream();
+            _server.RequestStream = _rrStream;
+            _server.ReplyStream = _rrStream;
 
             _server.Start();
         }
